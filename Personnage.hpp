@@ -13,7 +13,7 @@ class Personnage
     Personnage();
     Personnage(std::string nomArme, int degatsArme);
     // Personnage(Personnage const& autre);
-    void afficherEtat (); const
+    void afficherEtat () const;
     void recevoirDegats(int nbDegats);
     void attaquer(Personnage &cible);
     void boirePotionDeVie(int quantitePotion);
