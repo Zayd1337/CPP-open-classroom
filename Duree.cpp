@@ -81,7 +81,7 @@ void Duree::operator+=(Duree const& b)
     m_heures += b.m_heures;
 }
 
-void Duree::afficher(Duree const& b) const
+void Duree::afficher() const
 {
-    std::cout << b.m_heures << "h" << b.m_minutes << "min" << b.m_secondes << "s" << std::endl;
+    std::cout << m_heures << "h" << m_minutes << "min" << m_secondes << "s" << std::endl;
 }

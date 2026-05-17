@@ -12,7 +12,8 @@ int main()
 {
     Duree resultat, duree1(0, 14, 28), duree2(0, 15, 28);
 
-    resultat = duree1 + duree2;
+    resultat += duree1;
+    resultat += duree2;
     
     duree1.afficher();
     cout << " et " << endl;
@@ -21,7 +22,7 @@ int main()
     cout << " donne " << endl;
 
     resultat.afficher();
-    
+
     return 0;
 }
 
