@@ -16,15 +16,19 @@ class Personnage
     void afficherEtat () const;
     void recevoirDegats(int nbDegats);
     void attaquer(Personnage &cible);
+    void attaquerMana(Personnage &cible);
+    void entrerNom(std::string nom);
     void boirePotionDeVie(int quantitePotion);
     void changerArme(std::string nomNouvelleArme, int degatsNouvelleArme);
-    bool estVivant();
+    bool estVivant() const;
     ~Personnage();
 
     private:
 
     int m_vie; // commencer le nom des attributs par m_
     int m_mana;
+    std::string m_manatechnique;
+    std::string m_nom;
     Arme m_arme;
 
 }; // n'oubliez pas le point--virgule a la fin !
