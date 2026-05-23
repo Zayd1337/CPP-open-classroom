@@ -59,6 +59,35 @@ void Personnage::afficherEtat() const
     cout << "mana : " << m_mana << endl;
     m_arme.afficher();
 }
+
+void Personnage::attaquerAvecMagie(Personnage &cible)
+{
+    int coutMana = m_magie.getDegats();  // Mana cost = magic damage
+    
+    if (m_mana >= coutMana)
+    {
+        m_mana -= coutMana;
+        int degatsTotal = m_magie.getDegats();
+        cible.recevoirDegats(degatsTotal);
+        cout << m_nom << " a utilise " << coutMana << " mana !" << endl;
+        cout << "Mana restant : " << m_mana << endl;
+    }
+    else
+    {
+        cout << m_nom << " n'a pas assez de mana ! (Besoin: " << coutMana << ", Actuel: " << m_mana << ")" << endl;
+    }
+}
+
+bool Personnage::aManaDisponible(int cout) const
+{
+    return m_mana >= cout;
+}
+
+void Personnage::afficherMana() const
+{
+    cout << m_nom << " - Mana: " << m_mana << endl;
+}
+
 /*void MaClasse::maMethode(int parametre) const
 {
 

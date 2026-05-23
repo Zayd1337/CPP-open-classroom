@@ -21,6 +21,10 @@ class Personnage
     void boirePotionDeVie(int quantitePotion);
     void changerArme(std::string nomNouvelleArme, int degatsNouvelleArme);
     bool estVivant() const;
+    void attaquerAvecMagie(Personnage &cible);
+    void afficherMana() const;
+    bool aManaDisponible(int cout) const;
+
     ~Personnage();
 
     private:

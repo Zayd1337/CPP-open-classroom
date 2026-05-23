@@ -12,8 +12,9 @@ class Duree
     
     bool estEgal(Duree const& b) const;
     bool estPlusPetitQue(Duree const& b) const;
-    void operator+=(Duree const& b);
-    void afficher(Duree const& resultat) const;
+    Duree& operator+=(Duree const& b);
+    Duree& operator-=(Duree const& b);
+    void afficher(std::ostream &flux) const;
     private:
 
     int m_heures;
@@ -24,5 +25,7 @@ class Duree
 bool operator==(Duree const& a, Duree const& b);
 bool operator!=(Duree const& a, Duree const& b);
 bool operator<(Duree const& a, Duree const& b);
+Duree operator+(Duree const& a,Duree const& b);
+ostream &operator<<( ostream &flux, Duree const& duree);
 
 #endif

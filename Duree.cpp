@@ -1,5 +1,7 @@
 #include "Duree.hpp"
 
+using namespace std;
+
 Duree::Duree(int heures, int minutes, int secondes) : m_heures(heures), m_minutes(minutes), m_secondes(secondes)
 {
     if (m_secondes >= 60)
@@ -60,11 +62,12 @@ bool operator<(Duree const& a, Duree const& b)
 
 Duree operator+(Duree const& a, Duree const& b)
 {
-    Duree resultat;
+    Duree resultat(a);
+    resultat += b;
     return resultat;
 }
 
-void Duree::operator+=(Duree const& b)
+Duree& Duree::operator+=(Duree const& b)
 {
     m_secondes += b.m_secondes;
     if (m_secondes >= 60)
@@ -79,9 +82,17 @@ void Duree::operator+=(Duree const& b)
         m_minutes %= 60;
     }
     m_heures += b.m_heures;
+    return *this;
 }
+
 
 void Duree::afficher() const
 {
-    std::cout << m_heures << "h" << m_minutes << "min" << m_secondes << "s" << std::endl;
+    flux << m_heures << "h" << m_minutes << "min" << m_secondes << "s" ;
+}
+
+ostream &operator<<( ostream &flux, Duree const& duree)
+{
+    duree.afficher(flux);
+    return flux;
 }

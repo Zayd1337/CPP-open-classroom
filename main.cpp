@@ -10,18 +10,11 @@ using namespace std;
 
 int main()
 {
-    Duree resultat, duree1(0, 14, 28), duree2(0, 15, 28);
+    Duree resultat, duree1(0, 14, 28), duree2(0, 15, 28), duree3(0, 1, 0);
 
-    resultat += duree1;
-    resultat += duree2;
+    resultat = duree1 + duree2 + duree3;
     
-    duree1.afficher();
-    cout << " et " << endl;
-
-    duree2.afficher();
-    cout << " donne " << endl;
-
-    resultat.afficher();
+    cout << duree1 << "et" << duree2 << "donne" << resultat;
 
     return 0;
 }
