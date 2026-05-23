@@ -1,5 +1,6 @@
 #include "Duree.hpp"
 
+#include <ostream>
 using namespace std;
 
 Duree::Duree(int heures, int minutes, int secondes) : m_heures(heures), m_minutes(minutes), m_secondes(secondes)
@@ -86,7 +87,7 @@ Duree& Duree::operator+=(Duree const& b)
 }
 
 
-void Duree::afficher() const
+void Duree::afficher(std::ostream &flux) const
 {
     flux << m_heures << "h" << m_minutes << "min" << m_secondes << "s" ;
 }
